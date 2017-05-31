@@ -113,6 +113,7 @@
     <Compile Include="Assets\OVR\Scripts\Util\OVRWaitCursor.cs" />
     <Compile Include="Assets\Speak\ReactCube.cs" />
     <Compile Include="Assets\Speak\Speak.cs" />
+    <Compile Include="Assets\Wani\Scripts\PlayerPunchi.cs" />
     <Compile Include="Assets\Wani\Scripts\PlayerSpeak_Wani.cs" />
   </ItemGroup>
   <ItemGroup>

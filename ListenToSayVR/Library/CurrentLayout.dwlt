@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1536
     height: 781
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -391,9 +391,9 @@ MonoBehaviour:
     height: 424
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 64060000
-    m_LastClickedID: 0
-    m_ExpandedIDs: 98fbffff00000000
+    m_SelectedIDs: a4260000
+    m_LastClickedID: 9892
+    m_ExpandedIDs: c4fbffffd2fbffffd6fbffffdafbffffdefbffffe0fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -443,14 +443,14 @@ MonoBehaviour:
     width: 831
     height: 424
   m_SceneLighting: 1
-  lastFramingTime: 17471.832158293335
+  lastFramingTime: 1105.875643200549
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.32107925, y: 0.81251836, z: 0.23690581}
+    m_Target: {x: 0.6602144, y: 2.888112, z: -0.8189161}
     speed: 2
-    m_Value: {x: 0.32107925, y: 0.81251836, z: 0.23690581}
+    m_Value: {x: 0.6602144, y: 2.888112, z: -0.8189161}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -473,18 +473,18 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.15336484, y: -0.56029725, z: 0.10648433, w: -0.80697423}
+    m_Target: {x: -0.0879621, y: 0.0972585, z: -0.0086298995, w: -0.9913277}
     speed: 2
-    m_Value: {x: 0.15336484, y: 0.56029725, z: -0.10648433, w: 0.8069742}
+    m_Value: {x: -0.087962024, y: 0.09725842, z: -0.008629892, w: -0.99132687}
   m_Size:
-    m_Target: 8.124783
+    m_Target: 5.5416594
     speed: 2
-    m_Value: 8.124783
+    m_Value: 5.5416594
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: 0.14450333, y: 0.6921869, z: -0.144505, w: 0.69218093}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -553,19 +553,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Wani/Scripts
+    - Assets/Wani/Sound
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Wani/Scripts
+  - Assets/Wani/Sound
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\user\Documents\ListenToSayVR\ListenToSayVR
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 5e270000
-    m_LastClickedID: 10078
-    m_ExpandedIDs: 00000000ec2600001827000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 8}
+    m_SelectedIDs: 4e290000
+    m_LastClickedID: 10574
+    m_ExpandedIDs: 00000000162500004e25000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -593,7 +593,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: ae250000
     m_LastClickedID: 9646
-    m_ExpandedIDs: 00000000ec26000018270000
+    m_ExpandedIDs: 00000000162500004e250000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
