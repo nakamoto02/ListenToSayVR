@@ -46,14 +46,11 @@ public class PlayerSpeak_Wani : MonoBehaviour
 
         for(int i = 0; i < keyWords.Length; i++)
         {
+            //一つの配列に
             if(i < angerKeyWords.Length)
-            {
                 keyWords[i] = angerKeyWords[keyNo];
-            }
             else
-            {
                 keyWords[i] = smileKeyWords[keyNo];
-            }
 
             if (i == angerKeyWords.Length - 1) keyNo = 0;
             else keyNo++;
