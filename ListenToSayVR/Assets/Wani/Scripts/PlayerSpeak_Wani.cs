@@ -82,7 +82,7 @@ public class PlayerSpeak_Wani : MonoBehaviour
             }
         }
 
-        foreach(string key in angerKeyWords)
+        foreach(string key in smileKeyWords)
         {
             if(args.text == key)
             {
