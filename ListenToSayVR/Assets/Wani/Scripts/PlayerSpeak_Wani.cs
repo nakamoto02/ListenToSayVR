@@ -23,7 +23,7 @@ public class PlayerSpeak_Wani : MonoBehaviour
         "やめて"
     };
 
-    public GameObject enemy;
+    public Transform playerHead;
 
 
     KeywordRecognizer kwRecognizer;
@@ -57,8 +57,6 @@ public class PlayerSpeak_Wani : MonoBehaviour
 
             if (i == angerKeyWords.Length - 1) keyNo = 0;
             else keyNo++;
-
-            Debug.Log(keyWords[i]);
         }
     }
 
@@ -78,7 +76,7 @@ public class PlayerSpeak_Wani : MonoBehaviour
             {
                 Debug.Log("怒ったぞ");
 
-                enemy.GetComponent<MeshRenderer>().material.color = Color.red;
+                EnemyManager.PlayerSpeak(playerHead.position, 20.0f, Color.red);
             }
         }
 
@@ -88,7 +86,7 @@ public class PlayerSpeak_Wani : MonoBehaviour
             {
                 Debug.Log("しょうがないな～");
 
-                enemy.GetComponent<MeshRenderer>().material.color = Color.blue;
+                EnemyManager.PlayerSpeak(playerHead.position, 20.0f, Color.blue);
             }
         }
     }
