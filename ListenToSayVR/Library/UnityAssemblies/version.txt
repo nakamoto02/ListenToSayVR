@@ -16,6 +16,7 @@ C:/Program Files/Unity5_6_1/Editor/Data/UnityExtensions/Unity/TestRunner/Editor/
 C:/Program Files/Unity5_6_1/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll
 C:/Program Files/Unity5_6_1/Editor/Data/UnityExtensions/Unity/UnityAnalytics/Editor/UnityEditor.Analytics.dll
 C:/Program Files/Unity5_6_1/Editor/Data/UnityExtensions/Unity/UnityHoloLens/Editor/UnityEditor.HoloLens.dll
+C:/Program Files/Unity5_6_1/Editor/Data/UnityExtensions/Unity/UnityPurchasing/Editor/UnityEditor.Purchasing.dll
 C:/Program Files/Unity5_6_1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll
 C:/Program Files/Unity5_6_1/Editor/Data/Managed/UnityEditor.Graphs.dll
 C:/Program Files/Unity5_6_1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
