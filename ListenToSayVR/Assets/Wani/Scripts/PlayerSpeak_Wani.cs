@@ -71,8 +71,6 @@ public class PlayerSpeak_Wani : MonoBehaviour
         {
             if(args.text == key)
             {
-                Debug.Log("怒ったぞ");
-
                 EnemyManager.PlayerSpeak(playerHead.position, 20.0f, Color.red);
             }
         }
@@ -81,8 +79,6 @@ public class PlayerSpeak_Wani : MonoBehaviour
         {
             if(args.text == key)
             {
-                Debug.Log("しょうがないな～");
-
                 EnemyManager.PlayerSpeak(playerHead.position, 20.0f, Color.blue);
             }
         }

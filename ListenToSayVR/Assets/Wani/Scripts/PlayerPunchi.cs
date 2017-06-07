@@ -18,8 +18,6 @@ public class PlayerPunchi : MonoBehaviour
         {
             //音再生
             audio.Play();
-
-            Debug.Log("あああ");
         }
     }
 }
