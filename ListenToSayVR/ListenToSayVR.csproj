@@ -79,8 +79,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DragonBoar\Scripts\playerControlDB.cs" />
-    <Compile Include="Assets\EnemyController.cs" />
-    <Compile Include="Assets\Enemy_Create.cs" />
     <Compile Include="Assets\OVR\Scripts\OVRBoundary.cs" />
     <Compile Include="Assets\OVR\Scripts\OVRCameraRig.cs" />
     <Compile Include="Assets\OVR\Scripts\OVRCommon.cs" />
@@ -116,10 +114,12 @@
     <Compile Include="Assets\OVR\Scripts\Util\OVRWaitCursor.cs" />
     <Compile Include="Assets\Speak\ReactCube.cs" />
     <Compile Include="Assets\Speak\Speak.cs" />
-    <Compile Include="Assets\Wani\Scripts\EnemyManager.cs" />
-    <Compile Include="Assets\Wani\Scripts\Enemy_Test.cs" />
-    <Compile Include="Assets\Wani\Scripts\PlayerPunchi.cs" />
-    <Compile Include="Assets\Wani\Scripts\PlayerSpeak_Wani.cs" />
+    <Compile Include="Assets\Wani\Scripts\Enemy\EnemyController.cs" />
+    <Compile Include="Assets\Wani\Scripts\Enemy\EnemyManager.cs" />
+    <Compile Include="Assets\Wani\Scripts\Enemy\Enemy_Create.cs" />
+    <Compile Include="Assets\Wani\Scripts\PlayerSystem\PlayerPunchi.cs" />
+    <Compile Include="Assets\Wani\Scripts\PlayerSystem\PlayerSpeak_Wani.cs" />
+    <Compile Include="Assets\Wani\Scripts\Test\Enemy_Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\OVR\Editor\AndroidManifest.OVRSubmission.xml" />
