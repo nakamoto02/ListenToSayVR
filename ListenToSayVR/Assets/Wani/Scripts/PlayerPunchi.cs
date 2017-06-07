@@ -12,10 +12,13 @@ public class PlayerPunchi : MonoBehaviour
         audio = GetComponent<AudioSource>();
 	}
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collider)
     {
-        if(collision.transform.tag == "Enemy")
+        if(collider.transform.tag == "Enemy")
         {
+            //当たった
+            collider.GetComponent<EnemyController>().HitPunch();
+
             //音再生
             audio.Play();
         }

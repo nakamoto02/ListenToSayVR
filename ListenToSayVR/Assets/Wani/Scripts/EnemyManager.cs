@@ -17,5 +17,4 @@ public static class EnemyManager
                 enemy.GetComponent<MeshRenderer>().material.color = color;
         }
     }
-
 }
