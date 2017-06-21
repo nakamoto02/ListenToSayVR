@@ -51,7 +51,7 @@ public class Enemy_Create : MonoBehaviour
     /// ワニ生成のコルーチン
     IEnumerator EnemyCreater()
     {
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(interval);
 
         //敵生成
         EnemyBorn();
@@ -65,7 +65,7 @@ public class Enemy_Create : MonoBehaviour
         //敵スクリプト用意
         EnemyController enemy = new EnemyController();
         //出現位置
-        B_Pos = new Vector3(Random.Range(-9.0f, 9.0f), 0, Random.Range(2.0f, 9.0f));
+        B_Pos = new Vector3(Random.Range(-4.5f, 4.5f), 0, Random.Range(2.0f, 9.0f));
 
         switch (mode)
         {
@@ -80,6 +80,7 @@ public class Enemy_Create : MonoBehaviour
 
                 Nomal.transform.position = B_Pos;
                 enemy = Instantiate(Nomal).transform.GetComponent<EnemyController>();
+                interval = 3.0f;
 
                 break;
             case Mode.Anger:
