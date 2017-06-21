@@ -32,7 +32,7 @@ public class EnemyController : playerControlDB
         //Targetに向かって進む
         transform.position += transform.forward * RunSpeed;
 
-        ray = new Ray(transform.position, transform.forward);
+        ray = new Ray(transform.position, transform.forward * 1.5f);
 
         Debug.DrawRay(transform.position, transform.forward * maxRay, Color.red);
 

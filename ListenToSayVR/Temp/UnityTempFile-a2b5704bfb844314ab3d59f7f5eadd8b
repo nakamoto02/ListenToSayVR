@@ -84,6 +84,7 @@
 -define:UNITY_EDITOR_WIN
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:ENABLE_VSTU
+Assets/DragonBoar/Scripts/playerControlDB.cs
 Assets/OVR/Scripts/OVRBoundary.cs
 Assets/OVR/Scripts/OVRCameraRig.cs
 Assets/OVR/Scripts/OVRCommon.cs
@@ -119,7 +120,12 @@ Assets/OVR/Scripts/Util/OVRScreenFade.cs
 Assets/OVR/Scripts/Util/OVRWaitCursor.cs
 Assets/Speak/ReactCube.cs
 Assets/Speak/Speak.cs
-Assets/Wani/Scripts/PlayerSpeak_Wani.cs
+Assets/Wani/Scripts/Enemy/EnemyController.cs
+Assets/Wani/Scripts/Enemy/EnemyManager.cs
+Assets/Wani/Scripts/Enemy/Enemy_Create.cs
+Assets/Wani/Scripts/PlayerSystem/PlayerPunchi.cs
+Assets/Wani/Scripts/PlayerSystem/PlayerSpeak_Wani.cs
+Assets/Wani/Scripts/Test/Enemy_Test.cs
 -r:"C:\Program Files\Unity5_6_1\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll"
 -r:"C:\Program Files\Unity5_6_1\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll"
 -r:"C:\Program Files\Unity5_6_1\Editor\Data\Mono\lib\mono\unity\UnityScript.dll"

@@ -120,9 +120,9 @@ Assets/OVR/Scripts/Util/OVRScreenFade.cs
 Assets/OVR/Scripts/Util/OVRWaitCursor.cs
 Assets/Speak/ReactCube.cs
 Assets/Speak/Speak.cs
+Assets/Wani/Scripts/Enemy/EnemyController.cs
 Assets/Wani/Scripts/Enemy/EnemyManager.cs
 Assets/Wani/Scripts/Enemy/Enemy_Create.cs
-Assets/Wani/Scripts/EnemyController.cs
 Assets/Wani/Scripts/PlayerSystem/PlayerPunchi.cs
 Assets/Wani/Scripts/PlayerSystem/PlayerSpeak_Wani.cs
 Assets/Wani/Scripts/Test/Enemy_Test.cs
