@@ -5,8 +5,16 @@ using UnityEngine;
 [AddComponentMenu("Scripts/Player/Hand/PlayerPunchi")]
 public class PlayerPunchi : MonoBehaviour
 {
+    //---------------------------------------------------------------------------------------------
+    //  定数
+    //---------------------------------------------------------------------------------------------
+
     //Contorollerの移動速度の基準値
     const float HAND_SPEED_NORM = 2.0f;
+
+    //---------------------------------------------------------------------------------------------
+    //  Private
+    //---------------------------------------------------------------------------------------------
 
     //Transform
     Transform transformCache;
@@ -19,33 +27,43 @@ public class PlayerPunchi : MonoBehaviour
     [SerializeField]
     Rigidbody handEfePre;
 
-    //値
+    //力のVector
     Vector3 handVelocity = Vector3.zero;
-    float handPower;
+    //力の大きさ
+    float handPower = 0;
+    float handPower_before;
+    //フラグ
     bool IsHandEfe = false;
 
-	void Start ()
+    //---------------------------------------------------------------------------------------------
+    //  Start
+    //---------------------------------------------------------------------------------------------
+    void Start ()
     {
         //Transformを取得
         transformCache = transform;
         //AudioSourceを取得
         audio = transformCache.GetComponent<AudioSource>();
 	}
-
+    //---------------------------------------------------------------------------------------------
+    //  Update
+    //---------------------------------------------------------------------------------------------
     void Update()
     {
         HandMoveVelocity();
     }
-
+    //---------------------------------------------------------------------------------------------
+    //  HandMove
+    //---------------------------------------------------------------------------------------------
     void HandMoveVelocity()
     {
         //値の取得
         handVelocity = OVRInput.GetLocalControllerVelocity(handState);
+        handPower_before = handPower;
         handPower = handVelocity.magnitude;
 
         //一定速度以下
-        if (IsHandEfe) return;
-        if (handPower < HAND_SPEED_NORM) return;
+        if (!IsPubchEffectCrete()) return;
 
         //手を生成
         Rigidbody handEfe = Instantiate(handEfePre, transformCache.position, transformCache.rotation);
@@ -54,14 +72,22 @@ public class PlayerPunchi : MonoBehaviour
         //インターバル
         StartCoroutine(HandEffectInterval());
     }
-
+    bool IsPubchEffectCrete()
+    {
+        if (IsHandEfe) return false;
+        if (handPower_before < HAND_SPEED_NORM) return false;
+        if (handPower > HAND_SPEED_NORM) return false;
+        return true;
+    }
     IEnumerator HandEffectInterval()
     {
         IsHandEfe = true;
         yield return new WaitForSeconds(0.5f);
         IsHandEfe = false;
     }
-
+    //---------------------------------------------------------------------------------------------
+    //  当たり判定
+    //---------------------------------------------------------------------------------------------
     void OnTriggerEnter(Collider collider)
     {
         if(collider.transform.tag == "Enemy")
@@ -69,7 +95,6 @@ public class PlayerPunchi : MonoBehaviour
             HitHand(collider);
         }
     }
-
     void HitHand(Collider coll)
     {
         //一定速度以下
