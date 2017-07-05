@@ -9,33 +9,43 @@ public class PlayerPunchi : MonoBehaviour
     [SerializeField]
     OVRInput.Controller handState;
 
+    //値
+    [SerializeField]
+    Vector3 handVelocity = Vector3.zero;
+    [SerializeField]
+    float handPower;
+
 	void Start ()
     {
         //AudioSourceを取得
         audio = GetComponent<AudioSource>();
 	}
 
+    void Update()
+    {
+        handVelocity = OVRInput.GetLocalControllerVelocity(handState);
+        handPower = handVelocity.magnitude;
+    }
+
     void OnTriggerEnter(Collider collider)
     {
         if(collider.transform.tag == "Enemy")
         {
-            //当たった
-            collider.GetComponent<EnemyController>().HitPunch();
-            collider.GetComponent<Rigidbody>().AddForce(OVRInput.GetLocalControllerVelocity(handState));
-
-            //音再生
-            audio.Play();
+            HitHand(collider);
         }
     }
 
-    float PunchPower()
+    void HitHand(Collider coll)
     {
-        //ControllerのVelocity
-        Vector3 vel = OVRInput.GetLocalControllerVelocity(handState);
+        //一定速度以下
+        if (handPower < 2) return;
 
-        //Vectorの大きさをfloatに
-        float power = Vector3.Distance(Vector3.zero, vel);
+        //殴った
+        EnemyController enemy = coll.GetComponent<EnemyController>();
+        enemy.HitPunch();
+        coll.GetComponent<Rigidbody>().AddForce(handVelocity * 100);
 
-        return power;
+        //音再生
+        audio.Play();
     }
 }
