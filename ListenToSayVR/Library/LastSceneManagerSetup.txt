@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Wani/Scene/WaniScene.unity
+- path: Assets/Nakamoto/Scene/WaniScene.unity
   isLoaded: 1
   isActive: 1
