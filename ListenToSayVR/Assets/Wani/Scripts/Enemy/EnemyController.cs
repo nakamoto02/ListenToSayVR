@@ -17,10 +17,12 @@ public class EnemyController : playerControlDB
     RaycastHit hit;
     float maxRay = 2.0f;
 
+    Rigidbody rigidBody;
+
     // Use this for initialization
     void Start()
     {
-        
+        rigidBody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -56,9 +58,14 @@ public class EnemyController : playerControlDB
 
     //パンチが当たった
     [ContextMenu("HitPunch")]
-    public void HitPunch()
+    public void HitPunch(Vector3 velocity)
     {
+        //アニメーション
         Die();
+        //RigidBody
+        rigidBody.useGravity = true;
+        rigidBody.AddForce(velocity);
+        //削除
         Destroy(this.gameObject, 2.5f);
     }
 }

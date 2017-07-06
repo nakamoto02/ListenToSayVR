@@ -25,7 +25,7 @@ public class PlayerPunchi : MonoBehaviour
     OVRInput.Controller handState;
     //EffectのPrefab
     [SerializeField]
-    Rigidbody handEfePre;
+    HandEffect handEfePre;
     //効果音 0.素振り　1.殴打
     [SerializeField]
     AudioClip[] handSound;
@@ -79,8 +79,8 @@ public class PlayerPunchi : MonoBehaviour
         if (!IsPubchEffectCrete()) return;
 
         //手を生成
-        Rigidbody handEfe = Instantiate(handEfePre, transformCache.position, transformCache.rotation);
-        handEfe.AddForce(handVelocity * 100);
+        HandEffect handEfe = Instantiate(handEfePre, transformCache.position, transformCache.rotation);
+        handEfe.SetPower(handVelocity * 100);
         //音再生
         HandMoveSound(SoundState.Swing);
         //インターバル
@@ -116,8 +116,7 @@ public class PlayerPunchi : MonoBehaviour
 
         //殴った
         EnemyController enemy = coll.GetComponent<EnemyController>();
-        enemy.HitPunch();
-        coll.GetComponent<Rigidbody>().AddForce(handVelocity * 100);
+        enemy.HitPunch(handVelocity * 100);
 
         //音再生
         HandMoveSound(SoundState.Punch);

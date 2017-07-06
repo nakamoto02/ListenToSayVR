@@ -9,31 +9,33 @@ public class HandEffect : MonoBehaviour
 
     //Audio
     new AudioSource audio;
-    //RigidBody
-    Rigidbody efeRigidBody;
+
+    Vector3 punchiVelocity;
 
 	void Start ()
     {
         //Audioの取得
         audio = GetComponent<AudioSource>();
-        //RigidBodyの取得
-        efeRigidBody = GetComponent<Rigidbody>();
         //削除
         Destroy(this.gameObject, WAIT_TIME);
-
-        Debug.Log("Deta");
 	}
+
+    public void SetPower(Vector3 velocity)
+    {
+        punchiVelocity = velocity;
+        GetComponent<Rigidbody>().AddForce(punchiVelocity * 5);
+    }
 
     void OnTriggerEnter(Collider collider)
     {
         if (collider.transform.tag == "Enemy")
         {
             //当たった
-            collider.GetComponent<EnemyController>().HitPunch();
-            collider.GetComponent<Rigidbody>().AddForce(efeRigidBody.velocity);
-
+            collider.GetComponent<EnemyController>().HitPunch(punchiVelocity);
             //音
             audio.Play();
+            //削除
+            Destroy(this.gameObject);
         }
     }
 }
