@@ -117,6 +117,7 @@
     <Compile Include="Assets\Wani\Scripts\Enemy\EnemyController.cs" />
     <Compile Include="Assets\Wani\Scripts\Enemy\EnemyManager.cs" />
     <Compile Include="Assets\Wani\Scripts\Enemy\Enemy_Create.cs" />
+    <Compile Include="Assets\Wani\Scripts\Enemy\ManController.cs" />
     <Compile Include="Assets\Wani\Scripts\PlayerSystem\HandEffect.cs" />
     <Compile Include="Assets\Wani\Scripts\PlayerSystem\PlayerPunchi.cs" />
     <Compile Include="Assets\Wani\Scripts\PlayerSystem\PlayerSpeak_Wani.cs" />
