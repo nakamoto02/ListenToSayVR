@@ -17,11 +17,13 @@ public class EnemyController : playerControlDB
     RaycastHit hit;
     float maxRay = 2.0f;
 
+    CapsuleCollider collider;
     Rigidbody rigidBody;
 
     // Use this for initialization
     void Start()
     {
+        collider = GetComponent<CapsuleCollider>();
         rigidBody = GetComponent<Rigidbody>();
     }
 
@@ -63,6 +65,7 @@ public class EnemyController : playerControlDB
         //アニメーション
         Die();
         //RigidBody
+        collider.isTrigger = false;
         rigidBody.useGravity = true;
         rigidBody.AddForce(velocity);
         //削除
