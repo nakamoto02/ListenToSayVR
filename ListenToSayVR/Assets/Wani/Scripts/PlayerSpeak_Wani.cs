@@ -24,6 +24,7 @@ public class PlayerSpeak_Wani : MonoBehaviour
     };
 
     public Transform playerHead;
+    public Enemy_Create enemyCreate;
 
 
     KeywordRecognizer kwRecognizer;
@@ -71,7 +72,8 @@ public class PlayerSpeak_Wani : MonoBehaviour
         {
             if(args.text == key)
             {
-                EnemyManager.PlayerSpeak(playerHead.position, 20.0f, Color.red);
+                //EnemyManager.PlayerSpeak(playerHead.position, 20.0f, Color.red);
+                enemyCreate.ChangeMode(2);
             }
         }
 
@@ -79,7 +81,8 @@ public class PlayerSpeak_Wani : MonoBehaviour
         {
             if(args.text == key)
             {
-                EnemyManager.PlayerSpeak(playerHead.position, 20.0f, Color.blue);
+                //EnemyManager.PlayerSpeak(playerHead.position, 20.0f, Color.blue);
+                enemyCreate.ChangeMode(0);
             }
         }
     }

@@ -12,8 +12,6 @@ public class ManController : MonoBehaviour
     //男のアニメーション
     [SerializeField]
     Animation anim;
-    [SerializeField]
-    AnimationClip[] animClip;
 
     //男のスピード
     [SerializeField]
@@ -25,36 +23,27 @@ public class ManController : MonoBehaviour
     [SerializeField]
     float maxRay;
 
+    //原点の座標
+    Vector3 TargetPos = Vector3.zero;
 
     // Use this for initialization
     void Start ()
     {
-		
-	}
+        
+    }
 
     // Update is called once per frame
     void Update()
     {
         //向きをTargetに向ける
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(target.position - transform.position), 0.3f);
-
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(TargetPos - transform.position), 0.3f);
         //Targetに向かって進む
         transform.position += transform.forward * RunSpeed;
 
-        ray = new Ray(transform.position, transform.forward * maxRay);
-
-        Debug.DrawRay(transform.position, transform.forward * maxRay, Color.red);
-
-        Physics.Raycast(ray, out hit, maxRay);
-
-        //Rayに触れたら攻撃
-        if (hit.collider)
+        float dis = Vector3.Distance(transform.position, target.transform.position);
+        if(dis < 2.5f)
         {
-            if (hit.collider.tag == "Player")
-            {
-                anim.Play("jump");
-                RunSpeed = 0;
-            }
+            RunSpeed = 0;
         }
     }
 }

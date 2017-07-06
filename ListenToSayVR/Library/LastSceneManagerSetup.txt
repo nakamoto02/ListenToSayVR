@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Wani/Scene/WaniScene.unity
+- path: Assets/Wani/Scene/WaniWaniPanic.unity
   isLoaded: 1
   isActive: 1
