@@ -27,7 +27,7 @@ public class EnemyController : playerControlDB
     void Update()
     {
         //向きをTargetに向ける
-        //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(target.position - transform.position), 0.3f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(target.position - transform.position), 0.3f);
 
         //Targetに向かって進む
         transform.position += transform.forward * RunSpeed;
