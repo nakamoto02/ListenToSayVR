@@ -7,15 +7,11 @@ public class HandEffect : MonoBehaviour
 {
     const float WAIT_TIME = 3.0f;
 
-    //Audio
-    new AudioSource audio;
-
+    //Velocity
     Vector3 punchiVelocity;
 
 	void Start ()
     {
-        //Audioの取得
-        audio = GetComponent<AudioSource>();
         //削除
         Destroy(this.gameObject, WAIT_TIME);
 	}
@@ -32,8 +28,6 @@ public class HandEffect : MonoBehaviour
         {
             //当たった
             collider.GetComponent<EnemyController>().HitPunch(/*punchiVelocity*/);
-            //音
-            audio.Play();
             //削除
             Destroy(this.gameObject);
         }

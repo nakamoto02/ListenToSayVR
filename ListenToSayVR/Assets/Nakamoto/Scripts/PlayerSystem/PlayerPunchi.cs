@@ -11,6 +11,8 @@ public class PlayerPunchi : MonoBehaviour
 
     //Contorollerの移動速度の基準値
     const float HAND_SPEED_NORM = 2.0f;
+    //パンチ時の拳の角度の基準値
+    const float PUNCHI_DIR_NORM = 15.0f;
 
     //---------------------------------------------------------------------------------------------
     //  Private
@@ -23,11 +25,14 @@ public class PlayerPunchi : MonoBehaviour
     //Contolloer
     [SerializeField]
     OVRInput.Controller handState;
+    //前方方向
+    [SerializeField]
+    Transform dirPoint;
     //EffectのPrefab
     [SerializeField]
     HandEffect handEfePre;
     //効果音 0.素振り　1.殴打
-    [SerializeField]
+    [SerializeField, Space]
     AudioClip[] handSound;
 
     //力のVector
@@ -91,6 +96,18 @@ public class PlayerPunchi : MonoBehaviour
         if (IsHandEfe) return false;
         if (handPower_before < HAND_SPEED_NORM) return false;
         if (handPower > HAND_SPEED_NORM) return false;
+        if (!IsPunchiDirCheck()) return false;
+        return true;
+    }
+    //パンチの角度が基準値以下ならtrue
+    bool IsPunchiDirCheck()
+    {
+        //Vector
+        Vector3 handToPoint = dirPoint.position - transformCache.position;
+        //角度
+        float angle = Vector3.Angle(handToPoint, handVelocity);
+        //返り値
+        if (angle > PUNCHI_DIR_NORM) return false;
         return true;
     }
     IEnumerator HandEffectInterval()
