@@ -12,7 +12,7 @@ public class PlayerPunchi : MonoBehaviour
     //Contorollerの移動速度の基準値
     const float HAND_SPEED_NORM = 2.0f;
     //パンチ時の拳の角度の基準値
-    const float PUNCHI_DIR_NORM = 15.0f;
+    const float PUNCHI_DIR_NORM = 30.0f;
 
     //---------------------------------------------------------------------------------------------
     //  Private
@@ -86,8 +86,6 @@ public class PlayerPunchi : MonoBehaviour
         //手を生成
         HandEffect handEfe = Instantiate(handEfePre, transformCache.position, transformCache.rotation);
         handEfe.SetPower(handVelocity * 100);
-        //音再生
-        HandMoveSound(SoundState.Swing);
         //インターバル
         StartCoroutine(HandEffectInterval());
     }
@@ -96,6 +94,8 @@ public class PlayerPunchi : MonoBehaviour
         if (IsHandEfe) return false;
         if (handPower_before < HAND_SPEED_NORM) return false;
         if (handPower > HAND_SPEED_NORM) return false;
+        //音再生
+        HandMoveSound(SoundState.Swing);
         if (!IsPunchiDirCheck()) return false;
         return true;
     }
