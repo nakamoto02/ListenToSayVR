@@ -12,7 +12,7 @@ public class PlayerPunchi : MonoBehaviour
     //Contorollerの移動速度の基準値
     const float HAND_SPEED_NORM = 2.0f;
     //パンチ時の拳の角度の基準値
-    const float PUNCHI_DIR_NORM = 30.0f;
+    const float PUNCHI_DIR_NORM = 20.0f;
 
     //---------------------------------------------------------------------------------------------
     //  Private
@@ -31,17 +31,15 @@ public class PlayerPunchi : MonoBehaviour
     //EffectのPrefab
     [SerializeField]
     HandEffect handEfePre;
-    //効果音 0.素振り　1.殴打
+    //効果音 0.素振り 3.空気砲　2.殴打
     [SerializeField, Space]
-    AudioClip[] handSound;
+    AudioClip[] handSound = new AudioClip[3];
 
     //力のVector
     Vector3 handVelocity = Vector3.zero;
     //力の大きさ
     float handPower = 0;
     float handPower_before;
-    //フラグ
-    bool IsHandEfe = false;
 
     //---------------------------------------------------------------------------------------------
     //  enum (Sound)
@@ -50,6 +48,7 @@ public class PlayerPunchi : MonoBehaviour
     enum SoundState
     {
         Swing = 0,
+        Shot,
         Punch,
     }
 
@@ -86,17 +85,19 @@ public class PlayerPunchi : MonoBehaviour
         //手を生成
         HandEffect handEfe = Instantiate(handEfePre, transformCache.position, transformCache.rotation);
         handEfe.SetPower(handVelocity * 100);
-        //インターバル
-        StartCoroutine(HandEffectInterval());
     }
     bool IsPubchEffectCrete()
     {
-        if (IsHandEfe) return false;
         if (handPower_before < HAND_SPEED_NORM) return false;
         if (handPower > HAND_SPEED_NORM) return false;
+        if (!IsPunchiDirCheck())
+        {
+            //音再生
+            HandMoveSound(SoundState.Swing);
+            return false;
+        }
         //音再生
-        HandMoveSound(SoundState.Swing);
-        if (!IsPunchiDirCheck()) return false;
+        HandMoveSound(SoundState.Shot);
         return true;
     }
     //パンチの角度が基準値以下ならtrue
@@ -109,12 +110,6 @@ public class PlayerPunchi : MonoBehaviour
         //返り値
         if (angle > PUNCHI_DIR_NORM) return false;
         return true;
-    }
-    IEnumerator HandEffectInterval()
-    {
-        IsHandEfe = true;
-        yield return new WaitForSeconds(0.5f);
-        IsHandEfe = false;
     }
     //---------------------------------------------------------------------------------------------
     //  当たり判定
@@ -143,6 +138,8 @@ public class PlayerPunchi : MonoBehaviour
     //---------------------------------------------------------------------------------------------
     void HandMoveSound(SoundState state)
     {
+        //再生中ならreturn
+        if (state == SoundState.Swing && audio.isPlaying) return;
         //AudioClipをセット
         audio.clip = handSound[(int)state];
         //音再生
