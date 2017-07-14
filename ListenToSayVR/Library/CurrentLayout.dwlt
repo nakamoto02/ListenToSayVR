@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1536
     height: 781
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 46
+  controlID: 70
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 47
+  controlID: 71
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 48
+  controlID: 72
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -366,9 +366,9 @@ MonoBehaviour:
     height: 439
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0a72faff
-    m_LastClickedID: -364022
-    m_ExpandedIDs: 0a72faff907afaff965dfeff4861feff5465feffa0d1ffffbedfffff90f8ffff94f8ffff98f8ffffe2fbffff00000000a6280000102a0000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: d2f5ffffd6f5ffffdaf5ffffd8f9ffff00000000242b0000aa2c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -449,9 +449,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.28426182, y: 0.88323516, z: -0.03775528}
+    m_Target: {x: 0.025096893, y: 0.20070142, z: -0.21804583}
     speed: 2
-    m_Value: {x: 0.28426182, y: 0.88323516, z: -0.03775528}
+    m_Value: {x: 0.025096893, y: 0.20070142, z: -0.21804583}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -474,13 +474,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.03413003, y: -0.88892627, z: 0.06670809, w: -0.45193547}
+    m_Target: {x: 0.18220817, y: -0.68713063, z: 0.1847758, w: 0.67864925}
     speed: 2
-    m_Value: {x: -0.034129173, y: -0.8889039, z: 0.06670641, w: -0.45192412}
+    m_Value: {x: 0.18220314, y: -0.68711174, z: 0.18477072, w: 0.67863053}
   m_Size:
-    m_Target: 0.9120576
+    m_Target: 6.90224
     speed: 2
-    m_Value: 0.9120576
+    m_Value: 6.90224
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -554,19 +554,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Nakamoto/Sound
+    - Assets/Nakamoto/Prefab/Hand
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Nakamoto/Sound
+  - Assets/Nakamoto/Prefab/Hand
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\user\Documents\UnityProject\ListenToSayVR\ListenToSayVR
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 71}
-    m_SelectedIDs: 52270000
-    m_LastClickedID: 10066
-    m_ExpandedIDs: 00000000282500008c250000082600006a2600008a2600009226000012270000142700004c27000088270000ec2700001e28000026280000962f0000982f00009a2f00009c2f00009e2f0000a02f0000a22f0000a42f0000a62f0000a82f0000aa2f0000ac2f00007430000000ca9a3bffffff7f
+    m_SelectedIDs: 6e2a0000
+    m_LastClickedID: 10862
+    m_ExpandedIDs: 000000008a270000ec27000066280000c4280000ea280000f2280000322900008e29000090290000c4290000002a0000662a00009c2a0000a42a0000a2310000a4310000a6310000a8310000aa310000ac310000ae310000b0310000b2310000b4310000b6310000b831000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -594,7 +594,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000282500008c250000082600006a2600008a260000122700001427000088270000ec2700001e28000026280000962f0000982f00009a2f00009c2f00009e2f0000a02f0000a22f0000a42f0000a62f0000a82f0000aa2f0000ac2f0000
+    m_ExpandedIDs: 000000008a270000ec27000066280000c4280000ea280000f2280000322900008e29000090290000c4290000002a0000662a00009c2a0000a42a0000a2310000a4310000a6310000a8310000aa310000ac310000ae310000b0310000b2310000b4310000b6310000b8310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
