@@ -83,8 +83,8 @@ public class PlayerPunchi : MonoBehaviour
         if (!IsPubchEffectCrete()) return;
 
         //手を生成
-        HandEffect handEfe = Instantiate(handEfePre, transformCache.position, transformCache.rotation);
-        handEfe.SetPower(handVelocity * 100);
+        //HandEffect handEfe = Instantiate(handEfePre, transformCache.position, transformCache.rotation);
+        //handEfe.SetPower(handVelocity * 100);
     }
     bool IsPubchEffectCrete()
     {
