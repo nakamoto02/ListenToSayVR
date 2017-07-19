@@ -25,9 +25,9 @@ public class Enemy_Create : MonoBehaviour
     [SerializeField]
     GameObject Anger;  //怒っているワニ
 
-    //ターゲット(プレイヤー)
+    //ターゲット(原点)
     [SerializeField, Space]
-    Transform targetPlayer;
+    Vector3 targetPos;
 
     //インターバル
     float interval;
@@ -65,7 +65,7 @@ public class Enemy_Create : MonoBehaviour
         //敵スクリプト用意
         EnemyController enemy = new EnemyController();
         //出現位置
-        B_Pos = new Vector3(Random.Range(-4.5f, 4.5f), 0, Random.Range(2.0f, 9.0f));
+        B_Pos = new Vector3(Random.Range(-16.0f, 16.0f), 0, 35.0f);
 
         switch (mode)
         {
@@ -93,7 +93,7 @@ public class Enemy_Create : MonoBehaviour
         }
 
         //敵にターゲットを与える
-        enemy.SetTarget(targetPlayer);
+        enemy.SetTarget(targetPos);
     }
 
     public void ChangeMode(int modeNo)

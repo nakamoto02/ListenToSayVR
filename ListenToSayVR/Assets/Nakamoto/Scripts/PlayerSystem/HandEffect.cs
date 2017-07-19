@@ -27,7 +27,7 @@ public class HandEffect : MonoBehaviour
         if (collider.transform.tag == "Enemy")
         {
             //当たった
-            collider.GetComponent<EnemyController>().HitPunch(/*punchiVelocity*/);
+            collider.GetComponent<EnemyController>().HitPunch(punchiVelocity);
             //削除
             Destroy(this.gameObject);
         }

@@ -5,9 +5,15 @@ using UnityEngine;
 
 public class EnemyController : Enemy_Master
 {
-    //TargetのTransfrom
+    //ターゲットの座標
+    Vector3 target;
+
+    //自身の先端
     [SerializeField]
-    Transform target;
+    Transform TopPoint;
+
+    //自身のRigidbody
+    Rigidbody MyRig;
 
     //ワニのアニメーション
     public Animator anim;
@@ -20,12 +26,10 @@ public class EnemyController : Enemy_Master
     [SerializeField]
     float RunSpeed;
 
-    //原点の座標
-    Vector3 TargetPos;
-
     // Use this for initialization
     void Start()
     {
+        target = Vector3.zero;
         anim = GetComponent<Animator>();
         basicAttack = Animator.StringToHash("Basic Attack");
         getHit = Animator.StringToHash("Get Hit");
@@ -38,13 +42,13 @@ public class EnemyController : Enemy_Master
     {
 
         //向きをTargetに向ける
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(TargetPos - transform.position), 0.3f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(target - transform.position), 0.3f);
 
         //Targetに向かって進む
         transform.position += transform.forward * RunSpeed;
 
         //ターゲットとの距離を取得
-        float dis = Vector3.Distance(transform.position,target.transform.position);
+        float dis = Vector3.Distance(TopPoint.transform.position,target);
         //近づきすぎたら止める
         if (dis < 2.5f)
         {
@@ -53,27 +57,16 @@ public class EnemyController : Enemy_Master
         }
     }
 
-    public void SetTarget(Transform obj)
+    public void SetTarget(Vector3 obj)
     {
         target = obj;
     }
 
-    public void PunchHit(Vector3 HandPower)
-    {
-        HitPunch(HandPower);
-        anim.SetTrigger(die);
-        Destroy(this.gameObject, 2.5f);
-    }
-    //パンチが当たった
-    //[ContextMenu("HitPunch")]
-    //public void HitPunch()
-    //{
-    //    Die();
-    //    Destroy(this.gameObject, 2.5f);
-    //}
 
     public override void HitPunch(Vector3 HandPower)
     {
-        
+        MyRig.GetComponent<Rigidbody>().AddForce(HandPower * 5);
+        anim.SetTrigger(die);
+        Destroy(this.gameObject, 2.5f);
     }
 }
