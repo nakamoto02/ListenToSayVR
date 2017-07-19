@@ -41,11 +41,6 @@ public class ManController : Enemy_Master
         }
     }
 
-    public void PunchHit(Vector3 HandPower)
-    {
-        HitPunch(HandPower);
-        Destroy(this.gameObject, 2.5f);
-    }
     //パンチが当たった
     //[ContextMenu("HitPunch")]
     //public void HitPunch()
@@ -56,6 +51,6 @@ public class ManController : Enemy_Master
 
     public override void HitPunch(Vector3 HandPower)
     {
-        
+        Destroy(this.gameObject, 2.5f);
     }
 }
