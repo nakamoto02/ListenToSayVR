@@ -131,8 +131,8 @@ public class PlayerPunchi : MonoBehaviour
 
         //殴った
         HitObjRig = coll.gameObject.GetComponent<Rigidbody>();
-        EnemyController enemy = coll.GetComponent<EnemyController>();
-        enemy.PunchHit(handPower,HitObjRig);
+        Enemy_Master enemy = coll.GetComponent<Enemy_Master>();
+        enemy.HitPunch(handVelocity);
 
         //音再生
         HandMoveSound(SoundState.Punch);

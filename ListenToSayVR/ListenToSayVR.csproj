@@ -81,6 +81,7 @@
     <Compile Include="Assets\Nakajima\Import\DragonBoar\Scripts\playerControlDB.cs" />
     <Compile Include="Assets\Nakajima\Scripts\Enemy\EnemyController.cs" />
     <Compile Include="Assets\Nakajima\Scripts\Enemy\Enemy_Create.cs" />
+    <Compile Include="Assets\Nakajima\Scripts\Enemy\Enemy_Master.cs" />
     <Compile Include="Assets\Nakajima\Scripts\Enemy\ManController.cs" />
     <Compile Include="Assets\Nakamoto\Scripts\Enemy\EnemyManager.cs" />
     <Compile Include="Assets\Nakamoto\Scripts\PlayerSystem\HandEffect.cs" />
