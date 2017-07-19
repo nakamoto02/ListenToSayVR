@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [AddComponentMenu("Scripts/Player/Hand/PlayerPunchi")]
-public class PlayerPunchi : MonoBehaviour
+public class PlayerPunchi : Enemy_Master
 {
     //---------------------------------------------------------------------------------------------
     //  定数
@@ -34,6 +34,9 @@ public class PlayerPunchi : MonoBehaviour
     //効果音 0.素振り 3.空気砲　2.殴打
     [SerializeField, Space]
     AudioClip[] handSound = new AudioClip[3];
+
+    //殴られた敵のRigidbody
+    Rigidbody HitObjRig;
 
     //力のVector
     Vector3 handVelocity = Vector3.zero;
@@ -127,12 +130,24 @@ public class PlayerPunchi : MonoBehaviour
         if (handPower < HAND_SPEED_NORM) return;
 
         //殴った
+        HitObjRig = coll.gameObject.GetComponent<Rigidbody>();
+        HitPunch(handPower);
         EnemyController enemy = coll.GetComponent<EnemyController>();
-        enemy.HitPunch(/*handVelocity * 100*/);
+        enemy.PunchHit();
 
         //音再生
         HandMoveSound(SoundState.Punch);
     }
+
+    //---------------------------------------------------------------------------------------------
+    //  HitPunch
+    //---------------------------------------------------------------------------------------------
+    protected override void HitPunch(float HandPower)
+    {
+        HitObjRig.AddForce(transform.forward * HandPower);
+    }
+
+
     //---------------------------------------------------------------------------------------------
     //  PunchiSound
     //---------------------------------------------------------------------------------------------

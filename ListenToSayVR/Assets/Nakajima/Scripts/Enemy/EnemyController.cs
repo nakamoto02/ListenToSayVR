@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : playerControlDB
+public class EnemyController : MonoBehaviour
 {
     //TargetのTransfrom
     [SerializeField]
     Transform target;
+
+    //ワニのアニメーション
+    public Animator anim;
+    int basicAttack;
+    int getHit;
+    int die;
+    int run;
 
     //男のスピード
     [SerializeField]
@@ -18,7 +25,11 @@ public class EnemyController : playerControlDB
     // Use this for initialization
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
+        basicAttack = Animator.StringToHash("Basic Attack");
+        getHit = Animator.StringToHash("Get Hit");
+        die = Animator.StringToHash("Die");
+        run = Animator.StringToHash("Run");
     }
 
     // Update is called once per frame
@@ -36,7 +47,7 @@ public class EnemyController : playerControlDB
         //近づきすぎたら止める
         if (dis < 2.5f)
         {
-            BasicAttack();
+            anim.SetTrigger(basicAttack);
             RunSpeed = 0;
         }
     }
@@ -46,11 +57,16 @@ public class EnemyController : playerControlDB
         target = obj;
     }
 
-    //パンチが当たった
-    [ContextMenu("HitPunch")]
-    public void HitPunch()
+    public void PunchHit()
     {
-        Die();
+        anim.SetTrigger(die);
         Destroy(this.gameObject, 2.5f);
     }
+    //パンチが当たった
+    //[ContextMenu("HitPunch")]
+    //public void HitPunch()
+    //{
+    //    Die();
+    //    Destroy(this.gameObject, 2.5f);
+    //}
 }
