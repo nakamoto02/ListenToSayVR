@@ -9,9 +9,6 @@ public class EnemyController : Enemy_Master
     [SerializeField]
     Transform target;
 
-    //自身のRigidbody
-    Rigidbody MyRig;
-
     //ワニのアニメーション
     public Animator anim;
     int basicAttack;
@@ -61,9 +58,9 @@ public class EnemyController : Enemy_Master
         target = obj;
     }
 
-    public void PunchHit(float HandPower,Rigidbody HitObjRig)
+    public void PunchHit(Vector3 HandPower)
     {
-        HitPunch(HandPower,HitObjRig);
+        HitPunch(HandPower);
         anim.SetTrigger(die);
         Destroy(this.gameObject, 2.5f);
     }
@@ -75,9 +72,8 @@ public class EnemyController : Enemy_Master
     //    Destroy(this.gameObject, 2.5f);
     //}
 
-    public override void HitPunch(float HandPower,Rigidbody HitObjRig)
+    public override void HitPunch(Vector3 HandPower)
     {
-        MyRig.GetComponent<Rigidbody>();
-        MyRig.AddForce(transform.forward * -HandPower);
+        
     }
 }

@@ -17,9 +17,6 @@ public class ManController : Enemy_Master
     [SerializeField]
     float RunSpeed;
 
-    //男のRigidbody
-    Rigidbody MyRig;
-
     //原点の座標
     Vector3 TargetPos = Vector3.zero;
 
@@ -44,9 +41,9 @@ public class ManController : Enemy_Master
         }
     }
 
-    public void PunchHit(float HandPower,Rigidbody HitObjRig)
+    public void PunchHit(Vector3 HandPower)
     {
-        HitPunch(HandPower,HitObjRig);
+        HitPunch(HandPower);
         Destroy(this.gameObject, 2.5f);
     }
     //パンチが当たった
@@ -57,9 +54,8 @@ public class ManController : Enemy_Master
     //    Destroy(this.gameObject, 2.5f);
     //}
 
-    public override void HitPunch(float HandPower,Rigidbody HitObjRig)
+    public override void HitPunch(Vector3 HandPower)
     {
-        MyRig.GetComponent<Rigidbody>();
-        MyRig.AddForce(transform.forward * -HandPower);
+        
     }
 }
