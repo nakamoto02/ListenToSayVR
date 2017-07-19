@@ -4,7 +4,7 @@ using System.Collections;
 
 public abstract class Enemy_Master : MonoBehaviour
 {
-    protected abstract void HitPunch(float HandPower,Rigidbody HitRig);
+    public abstract void HitPunch(float HandPower,Rigidbody HitRig);
 
 	// Use this for initialization
 	void Start () {
