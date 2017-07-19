@@ -1,12 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : Enemy_Master
 {
     //TargetのTransfrom
     [SerializeField]
     Transform target;
+
+    //自身のRigidbody
+    Rigidbody MyRig;
 
     //ワニのアニメーション
     public Animator anim;
@@ -57,10 +61,11 @@ public class EnemyController : MonoBehaviour
         target = obj;
     }
 
-    public void PunchHit()
+    public void PunchHit(float HandPower,Rigidbody HitObjRig)
     {
-        anim.SetTrigger(die);
-        Destroy(this.gameObject, 2.5f);
+        HitPunch(HandPower,HitObjRig);
+        //anim.SetTrigger(die);
+        //Destroy(this.gameObject, 2.5f);
     }
     //パンチが当たった
     //[ContextMenu("HitPunch")]
@@ -69,4 +74,10 @@ public class EnemyController : MonoBehaviour
     //    Die();
     //    Destroy(this.gameObject, 2.5f);
     //}
+
+    protected override void HitPunch(float HandPower,Rigidbody HitObjRig)
+    {
+        MyRig.GetComponent<Rigidbody>();
+        MyRig.AddForce(transform.forward * -HandPower);
+    }
 }
