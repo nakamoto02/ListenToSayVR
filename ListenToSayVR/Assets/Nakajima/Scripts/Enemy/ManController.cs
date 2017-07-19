@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ManController : MonoBehaviour
+public class ManController : Enemy_Master
 {
 
     //TargetのTransfrom
@@ -17,11 +17,8 @@ public class ManController : MonoBehaviour
     [SerializeField]
     float RunSpeed;
 
-    //Ray関係
-    Ray ray;
-    RaycastHit hit;
-    [SerializeField]
-    float maxRay;
+    //男のRigidbody
+    Rigidbody MyRig;
 
     //原点の座標
     Vector3 TargetPos = Vector3.zero;
@@ -45,5 +42,25 @@ public class ManController : MonoBehaviour
         {
             RunSpeed = 0;
         }
+    }
+
+    public void PunchHit(float HandPower,Rigidbody HitObjRig)
+    {
+        HitPunch(HandPower,HitObjRig);
+        //anim.SetTrigger(die);
+        //Destroy(this.gameObject, 2.5f);
+    }
+    //パンチが当たった
+    //[ContextMenu("HitPunch")]
+    //public void HitPunch()
+    //{
+    //    Die();
+    //    Destroy(this.gameObject, 2.5f);
+    //}
+
+    protected override void HitPunch(float HandPower,Rigidbody HitObjRig)
+    {
+        MyRig.GetComponent<Rigidbody>();
+        MyRig.AddForce(transform.forward * -HandPower);
     }
 }
