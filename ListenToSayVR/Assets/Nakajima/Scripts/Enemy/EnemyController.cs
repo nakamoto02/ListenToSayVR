@@ -64,8 +64,8 @@ public class EnemyController : Enemy_Master
     public void PunchHit(float HandPower,Rigidbody HitObjRig)
     {
         HitPunch(HandPower,HitObjRig);
-        //anim.SetTrigger(die);
-        //Destroy(this.gameObject, 2.5f);
+        anim.SetTrigger(die);
+        Destroy(this.gameObject, 2.5f);
     }
     //パンチが当たった
     //[ContextMenu("HitPunch")]
@@ -75,7 +75,7 @@ public class EnemyController : Enemy_Master
     //    Destroy(this.gameObject, 2.5f);
     //}
 
-    protected override void HitPunch(float HandPower,Rigidbody HitObjRig)
+    public override void HitPunch(float HandPower,Rigidbody HitObjRig)
     {
         MyRig.GetComponent<Rigidbody>();
         MyRig.AddForce(transform.forward * -HandPower);
