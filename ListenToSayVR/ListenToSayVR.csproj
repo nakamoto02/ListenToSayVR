@@ -83,6 +83,7 @@
     <Compile Include="Assets\Nakajima\Scripts\Enemy\Enemy_Create.cs" />
     <Compile Include="Assets\Nakajima\Scripts\Enemy\Enemy_Master.cs" />
     <Compile Include="Assets\Nakajima\Scripts\Enemy\ManController.cs" />
+    <Compile Include="Assets\Nakamoto\Scripts\Debug\DebugKey.cs" />
     <Compile Include="Assets\Nakamoto\Scripts\Enemy\EnemyManager.cs" />
     <Compile Include="Assets\Nakamoto\Scripts\PlayerSystem\HandEffect.cs" />
     <Compile Include="Assets\Nakamoto\Scripts\PlayerSystem\PlayerPunchi.cs" />
